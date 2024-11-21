@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Magic Eight Ball</title>
+</head>
+
+<body>
+<script type="text/javascript">
+
+let cont = true;
+while(cont = true){
+    // Prompt the player for their question.
+    input = prompt('Think of a question that can be answered yes no. Then let Magic Eight Ball shows you the future...')
+
+    // Use a randomizer to select one answer per question to display to the asker.
+    const strArray = ['It is uncertain.', 'It is decidedly so.', 'Without a doubt.','Reply hazy, try again.',
+    'I do not think so.','As I see it, yes.','Most Likely.','Outlook good.'];
+    let answer = strArray[Math.floor(Math.random() * strArray.length)];
+    console.log(answer);
+    alert(answer);
+
+    // Repeat until the user chooses to stop. 
+    let resume = prompt('Do you want to ask another question? (Enter y or n)');
+    if (resume.toLowerCase() == 'n'){
+        cont = false;
+        break;
+    } else if (resume.toLowerCase() == 'y'){
+        cont = true;
+    };
+}
+// When the asker chooses to stop, present a farewell message of your creation.
+alert('Hope Magic Eight Ball helps answer your question. May your new endeavor be everything you have dreamed of and more!')
+
+
+</script>
+</body>
+</html>
